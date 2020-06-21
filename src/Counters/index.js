@@ -4,7 +4,9 @@ import {useSelector,useDispatch} from "react-redux";
 
 const Counter  = () => {
 
-    const count =useSelector(state=>state.count);
+    const count = useSelector(state=> state.rootReducer.count);
+    const name = useSelector(state => state.nameReducer.name);
+
     const dispatch = useDispatch ();
 
     const incrementCount = ()=>
@@ -28,6 +30,8 @@ const Counter  = () => {
                 <Button variant="contained" color="primary" onClick={incrementCount}  style={{marginRight:'1%'}}>+</Button>
                 <Button variant="contained" onClick={decrementCount} color="secondary" >-</Button>
              </div>
+             <br/>
+             <h3>{name}</h3>
         </div>
     );
 }

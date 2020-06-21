@@ -1,10 +1,10 @@
 
-const initialState = {
+export const initialState = {
     count : 0,
     totalCounted : 0
 }
 const rootReducer = (state = initialState,action)=>
-{
+{console.log(state);
     switch(action.type)
     {
         case "INCREMENT":

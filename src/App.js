@@ -4,8 +4,14 @@ import {createStore,combineReducers} from "redux";
 import rootReducer from "./reducers/rootReducer";
 import {Provider} from "react-redux";
 import Counter from "./Counters";
+import NameComponent from "./Name";
+import nameReducer from "./reducers/nameReducer";
 
-const store = createStore(rootReducer);
+const rootReducerApp = combineReducers({
+    rootReducer,
+    nameReducer
+})
+const store = createStore(rootReducerApp);
 
 function App() {
   return (
@@ -14,7 +20,8 @@ function App() {
           <h2>React with Redux&Hooks </h2>
           <br/>
         <Counter/>
-
+        <br/>
+        <NameComponent/>
         </Provider>
     </div>
   );
